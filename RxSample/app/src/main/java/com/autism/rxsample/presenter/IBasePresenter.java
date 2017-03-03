@@ -5,5 +5,6 @@ package com.autism.rxsample.presenter;
  * Used:
  */
 public interface IBasePresenter {
+    //初始化时候调用,在BaseAct调用即可
     void onInit();
 }

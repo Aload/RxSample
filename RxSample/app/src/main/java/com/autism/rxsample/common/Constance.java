@@ -5,4 +5,9 @@ package com.autism.rxsample.common;
  * Used:
  */
 public interface Constance {
+    int SERVER_ERROR_CODE = 1001;
+    int NET_ERROR_CODE = 1002;
+    int PARAMTER_ERROR_CODE = 1003;
+    int NORMAL_CODE = 1004;
+    int RX_ERROR_CODE = 1005;
 }

@@ -58,7 +58,7 @@ public class RequestManger {
                     .connectTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS)
                     .writeTimeout(DEFAULT_TIMEOUT, TimeUnit.SECONDS);
 
-            //可以区别
+            //可以区别http,https
             if (!StringUtil.isNullOrEmpty(url) && url.toLowerCase().contains("https:")) {
                 try {
                     builder.sslSocketFactory(getSSLSocketFactory(new int[]{mListener.getRawSSl()}));

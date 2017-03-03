@@ -7,5 +7,5 @@ package com.autism.rxsample.rxlistener;
 public interface IRXSubcribListener<T> {
     void _onNext(T mData);
 
-    void _onError();
+    void _onError(int error_msg);
 }

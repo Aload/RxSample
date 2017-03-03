@@ -32,7 +32,9 @@ public class HomeApiPresenterImp extends BasePresenterIml implements IRXSubcribL
     }
 
     @Override
-    public void _onError() {
-
+    public void _onError(int error_msg) {
+        //TODO  逻辑代码实现
     }
+
+
 }
