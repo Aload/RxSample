@@ -4,7 +4,11 @@ import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
 
+import com.autism.rxsample.tinker.Log.TinkerLogImp;
+import com.autism.rxsample.tinker.reporter.TinkerManager;
 import com.tencent.tinker.anno.DefaultLifeCycle;
+import com.tencent.tinker.lib.tinker.Tinker;
+import com.tencent.tinker.lib.tinker.TinkerInstaller;
 import com.tencent.tinker.loader.app.DefaultApplicationLike;
 import com.tencent.tinker.loader.shareutil.ShareConstants;
 
@@ -12,7 +16,7 @@ import com.tencent.tinker.loader.shareutil.ShareConstants;
  * Author：Autism on 2017/3/2 14:10
  * Used:
  */
-@DefaultLifeCycle(application = ".TinkerApplication",
+@DefaultLifeCycle(application = ".TinkerSampleApplication",
         flags = ShareConstants.TINKER_ENABLE_ALL,
         loadVerifyFlag = false)
 public class BaseApplication extends DefaultApplicationLike {
@@ -34,6 +38,7 @@ public class BaseApplication extends DefaultApplicationLike {
         super.onBaseContextAttached(base);
         mContext = base;
         mApplication = this;
+        initTinker();
     }
 
     public static Context getmContext() {
@@ -44,5 +49,17 @@ public class BaseApplication extends DefaultApplicationLike {
     public static BaseApplication getmApplication() {
         if (null != mApplication) return mApplication;
         else return null;
+    }
+
+    /**
+     * 初始化Tinker
+     */
+    private void initTinker() {
+        TinkerManager.setTinkerApplicationLike(this);
+        TinkerManager.initFastCrashProtect();
+        TinkerManager.setUpgradeRetryEnable(true);
+        TinkerInstaller.setLogIml(new TinkerLogImp());
+        TinkerManager.installTinker(this);
+        Tinker.with(getApplication());
     }
 }
