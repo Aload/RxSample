@@ -29,6 +29,7 @@ dependencies {
     // Reactive Programming RxJava
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'io.reactivex:rxjava:1.1.6'
+    //权限检测 //TODO 后期引入
     compile 'com.tbruyelle.rxpermissions:rxpermissions:0.7.0@aar'
 
     //retrofit
@@ -37,7 +38,7 @@ dependencies {
     compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
     compile 'com.squareup.okhttp3:logging-interceptor:3.4.1'
 
-    //可选，用于生成application类
+    //可选，用于生成application类 //TODO 后期引入
     provided('com.tencent.tinker:tinker-android-anno:1.7.7')
     //tinker的核心库
     compile('com.tencent.tinker:tinker-android-lib:1.7.7')
