@@ -19,6 +19,7 @@ public class HomeApiPresenterImp extends BasePresenterIml implements IRXSubcribL
     protected void handleNetRes(Retrofit retrofit) {
         Subscriber<BaseBean<HomeBannerBean>> mSubcrib = new BaseSubscribe<>(this);
         HomeReq.getHomeInstance(retrofit).getHomeBanner(mSubcrib);
+        addSubscrebe(mSubcrib);
     }
 
     @Override

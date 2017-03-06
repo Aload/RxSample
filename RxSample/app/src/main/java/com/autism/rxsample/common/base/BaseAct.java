@@ -12,13 +12,16 @@ import com.autism.rxsample.utils.eventbus.EventBusUtils;
  * Used:
  */
 public abstract class BaseAct extends FragmentActivity {
+    private BasePresenterIml presenter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initView();
         initVariable();
-        getPresenter().onInit();
+
+        presenter = getPresenter();
+        presenter.onInit();
     }
 
     protected BasePresenterIml getPresenter() {
@@ -55,6 +58,7 @@ public abstract class BaseAct extends FragmentActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        if (null != presenter) presenter.unSubscribe();
         EventBusUtils.onUnRegisterEnventBus(this);
     }
 }
