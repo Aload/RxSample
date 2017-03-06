@@ -212,4 +212,7 @@ dependencies {
     provided('com.tencent.tinker:tinker-android-anno:1.7.7')
     //tinker的核心库
     compile('com.tencent.tinker:tinker-android-lib:1.7.7')
+
+    //eventbus
+    compile 'org.greenrobot:eventbus:3.0.0'
 }
