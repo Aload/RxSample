@@ -37,7 +37,8 @@ public class RequestManger {
 
     public static RequestManger getRequestManager() {
         if (null == mManager) synchronized (RequestManger.class) {
-            mManager = new RequestManger();
+            if (null == mManager)
+                mManager = new RequestManger();
         }
         return mManager;
     }
