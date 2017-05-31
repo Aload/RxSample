@@ -21,7 +21,8 @@ public abstract class BaseAct extends FragmentActivity {
         initVariable();
 
         presenter = getPresenter();
-        presenter.onInit();
+        if (null != presenter)
+            presenter.onInit();
     }
 
     protected BasePresenterIml getPresenter() {

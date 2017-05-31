@@ -68,7 +68,6 @@ public class RequestManger {
                     mListener.getException(e);
                 }
             }
-
             OkHttpClient client = builder.build();
             mRetrofit = new Retrofit.Builder()
                     .client(client)

@@ -1,8 +1,6 @@
 package com.autism.rxsample.presenter;
 
 
-import android.app.Activity;
-
 import com.autism.rxsample.common.Constance;
 import com.autism.rxsample.home.model.BaseBean;
 import com.autism.rxsample.rxlistener.IRXSubcribListener;
